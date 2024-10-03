@@ -7,9 +7,15 @@ export interface ProfileProps {
   setDescription: (value: string) => void;
 }
 export interface ColorSchemeProps {
-  colorScheme: { mainColor1: string; mainColor2: string; textColor: string; containerColor: string };
+  colorScheme: {
+    mainColor1: string;
+    mainColor2: string;
+    textColor: string;
+    containerColor: string;
+  };
   handleColorChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
+
 export interface ProfilePictureProps {
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   profilePictureUrl?: string | null;

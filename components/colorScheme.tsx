@@ -1,4 +1,4 @@
-import { ColorSchemeProps } from "@/lib/props";
+import { ColorSchemeProps } from "@/lib/props"; // Import your props interface
 import styles from "./colorScheme.module.scss";
 
 export default function ColorScheme({ colorScheme, handleColorChange }: ColorSchemeProps) {

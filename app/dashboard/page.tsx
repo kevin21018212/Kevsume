@@ -76,26 +76,24 @@ export default function Dashboard() {
   const handleSave = async () => {
     let uploadedProfilePictureUrl = profilePictureUrl;
 
-    // Upload the profile picture if a new one is selected
     if (profilePicture) {
       const storageRef = ref(storage, `profilePictures/${user?.uid}`);
       await uploadBytes(storageRef, profilePicture);
       uploadedProfilePictureUrl = await getDownloadURL(storageRef);
     }
 
-    // Save user data to Firestore
     if (user?.uid) {
       await setDoc(doc(db, "users", user.uid), {
-        name,
-        title,
-        description,
-        profilePictureUrl: uploadedProfilePictureUrl,
-        links,
+        name: name || "", // Ensure you handle empty values
+        title: title || "",
+        description: description || "",
+        profilePictureUrl: uploadedProfilePictureUrl || "",
+        links: links || [], // Ensure arrays are correctly initialized
+        colorScheme: colorScheme || {}, // Ensure objects are correctly initialized
       });
 
       router.push(`/users/${user.uid}`);
     }
-    router.push(`/users/${user?.uid}`);
   };
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {

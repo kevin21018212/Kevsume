@@ -7,7 +7,8 @@ export const signInWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (error) {
-    console.error("Error during sign in:", error);
+    console.error("Error during sign-in:", error);
+    throw new Error("Failed to sign in with Google");
   }
 };
 
@@ -16,5 +17,6 @@ export const logout = async () => {
     await signOut(auth);
   } catch (error) {
     console.error("Error during logout:", error);
+    throw new Error("Failed to log out");
   }
 };
