@@ -19,9 +19,17 @@
   margin-bottom: 15px;
 }
 
+.colorDisplay {
+  display: flex;
+  gap: 1vw;
+}
 // Color Picker
 .colorPicker {
   display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
   align-items: center;
 }
 
@@ -32,11 +40,11 @@
 }
 
 .colorInput {
-  width: 40px;
-  height: 40px;
+  width: 75px;
+  height: 75px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 

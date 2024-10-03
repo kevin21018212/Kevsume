@@ -1,6 +1,6 @@
 // app/dashboard/page.tsx (Creation Page with Dynamic Links)
 "use client";
-
+import styles from "./dashboard.module.scss";
 import { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, storage } from "@/lib/firebase";
@@ -108,16 +108,22 @@ export default function Dashboard() {
   };
 
   return (
-    <div>
-      <Profile
-        name={name}
-        title={title}
-        description={description}
-        setName={setName}
-        setTitle={setTitle}
-        setDescription={setDescription}
-      />
-      <ProfilePicture handleFileChange={handleFileChange} />
+    <div className={styles.dashboardContainer}>
+      <div className={styles.profileContainer}>
+        <div className={styles.profileSection}>
+          <Profile
+            name={name}
+            title={title}
+            description={description}
+            setName={setName}
+            setTitle={setTitle}
+            setDescription={setDescription}
+          />
+        </div>
+        <div className={styles.profilePictureSection}>
+          <ProfilePicture handleFileChange={handleFileChange} />
+        </div>
+      </div>
       <Links
         links={links}
         handleLinkChange={handleLinkChange}
@@ -125,8 +131,15 @@ export default function Dashboard() {
         handleRemoveLink={handleRemoveLink}
       />
       <ColorScheme colorScheme={colorScheme} handleColorChange={handleColorChange} />
-      <button onClick={handleSave}>Save</button>
-      <button onClick={handleLogout}>Logout</button>
+
+      <div className={styles.buttonContianer}>
+        <button className={styles.saveButton} onClick={handleSave}>
+          Save
+        </button>
+        <button className={styles.logoutButton} onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
     </div>
   );
 }
