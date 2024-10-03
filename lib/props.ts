@@ -10,7 +10,10 @@ export interface ColorSchemeProps {
   colorScheme: { mainColor1: string; mainColor2: string; textColor: string; containerColor: string };
   handleColorChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
-
+export interface ProfilePictureProps {
+  handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  profilePictureUrl?: string | null;
+}
 export interface LinksProps {
   links: { name: string; href: string }[];
   handleLinkChange: (index: number, field: "name" | "href", value: string) => void;
