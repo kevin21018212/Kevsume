@@ -1,5 +1,5 @@
 import { ColorSchemeProps } from "@/lib/props";
-import styles from "@/styles/colorScheme.module.scss";
+import styles from "./colorScheme.module.scss";
 
 export default function ColorScheme({ colorScheme, handleColorChange }: ColorSchemeProps) {
   return (

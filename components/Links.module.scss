@@ -1,5 +1,15 @@
 .linksSection {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
+  h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
 }
 
 .link {
@@ -8,7 +18,7 @@
   margin-bottom: 10px;
 }
 
-.input {
+.link .input {
   flex: 1;
   padding: 8px;
   font-size: 14px;
@@ -24,4 +34,9 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 }

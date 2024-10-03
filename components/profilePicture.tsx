@@ -1,5 +1,5 @@
 import { ProfilePictureProps } from "@/lib/props";
-import styles from "@/styles/profilePicture.module.scss";
+import styles from "./profilePicture.module.scss";
 
 export default function ProfilePictureSection({ handleFileChange, profilePictureUrl }: ProfilePictureProps) {
   return (

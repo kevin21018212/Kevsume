@@ -9,6 +9,10 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import Profile from "@/components/Profile";
+import Links from "@/components/Links";
+
+import ProfilePicture from "@/components/profilePicture";
+import ColorScheme from "@/components/colorScheme";
 
 export default function Dashboard() {
   const [user, loading] = useAuthState(auth);
@@ -94,7 +98,7 @@ export default function Dashboard() {
     router.push(`/users/${user?.uid}`);
   };
 
-  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setColorScheme({ ...colorScheme, [e.target.name]: e.target.value });
   };
 
@@ -113,14 +117,14 @@ export default function Dashboard() {
         setTitle={setTitle}
         setDescription={setDescription}
       />
-      <ProfilePictureSection handleFileChange={handleFileChange} />
-      <LinksSection
+      <ProfilePicture handleFileChange={handleFileChange} />
+      <Links
         links={links}
         handleLinkChange={handleLinkChange}
         handleAddLink={handleAddLink}
         handleRemoveLink={handleRemoveLink}
       />
-      <ColorSchemeSection colorScheme={colorScheme} handleColorChange={handleColorChange} />
+      <ColorScheme colorScheme={colorScheme} handleColorChange={handleColorChange} />
       <button onClick={handleSave}>Save</button>
       <button onClick={handleLogout}>Logout</button>
     </div>

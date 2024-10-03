@@ -1,5 +1,5 @@
 import { LinksProps } from "@/lib/props";
-import styles from "@/styles/Links.module.scss";
+import styles from "./Links.module.scss";
 
 export default function Links({ links, handleLinkChange, handleAddLink, handleRemoveLink }: LinksProps) {
   return (

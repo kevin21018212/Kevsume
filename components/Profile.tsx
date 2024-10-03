@@ -1,5 +1,5 @@
 import { ProfileProps } from "@/lib/props";
-import styles from "./Profile.module.css";
+import styles from "./Profile.module.scss";
 
 export default function Profile({ name, title, description, setName, setTitle, setDescription }: ProfileProps) {
   return (

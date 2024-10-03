@@ -1,10 +1,15 @@
 .profilePictureSection {
   margin: 20px 0;
   text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 
   h2 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #333;
   }
 }
 
@@ -13,7 +18,8 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
 }
 
 .placeholder {
@@ -24,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 14px;
   color: #999;
 }
@@ -32,4 +38,13 @@
 .fileInput {
   margin-top: 10px;
   cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 }
